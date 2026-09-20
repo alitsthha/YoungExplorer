@@ -1,33 +1,18 @@
 # Bundled assets
 
-## Design reference
+## Young Explorers Academy brand
 
-- Kidvero template listing: https://themeforest.net/item/kidvero-kindergarten-child-care-elementor-template-kit/62589092
-- Publisher's homepage screenshot: https://s3.envato.com/files/791113495/2.%20Home%20Page.png
+The supplied `public/images/Logo/Young Explorers Academy LOGO BRAND DESIGN.pdf` is the visual reference. Its palette specifies Adventure Blue `#0077cc`, Exploration Green `#00cc66`, and Sunshine Yellow `#ffcc00`. Darker blue and green text tones and pale background tints provide readable UI contrast.
 
-The screenshot was used for visual inspection only and is not included in the project. No paid Elementor source, WordPress code, or stock photographs from the kit are redistributed.
+`public/images/Logo/logo.png` is the supplied horizontal logo, displayed without recoloring on white in the header and footer. The guide names Mic 32 New Rounded; that font was not supplied, so the existing locally bundled Nunito and Poppins fonts are retained.
 
-## Original generated images
+## Academy photography
 
-These images were produced using the built-in image-generation tool for this project. All depicted people are synthetic demo imagery; the biographies and reviews are illustrative.
+All active photographs come from the supplied `public/images/Gallery/` folder. Semantic section assignments and the complete 37-photo tour are defined in `src/data/content.ts`. One duplicate photograph is omitted from the tour. The supplied videos remain available in the folder.
 
-| Asset | Contents and placement |
-| --- | --- |
-| `public/images/hero-schoolboy.png` | A smiling young schoolboy with glasses, a blue backpack, and orange notebook; homepage hero |
-| `public/images/children-atlas.png` | Nine equal panels; reading friends, classroom blocks, painting, outdoor notebook, children running, family reading, shared laptop, reading tent, and puzzle play |
-| `public/images/teachers-atlas.png` | Four equal educator portraits used for the teacher section and illustrative avatars |
+The photo component uses native images with lazy loading. The hero is loaded eagerly. Group and activity photos illustrate teaching teams without assigning invented personal identities to people in the photographs. Testimonials retain the existing illustrative text and use initials instead of stock portraits.
 
-Panel coordinates in `Shared.tsx` are zero-based `[column, row, atlas]`. The 3×3 image contains:
-
-| Row | Column 0 | Column 1 | Column 2 |
-| --- | --- | --- | --- |
-| 0 | Reading outdoors | Classroom blocks | Art activity |
-| 1 | Child with notebook | Outdoor adventures | Family reading |
-| 2 | Children with laptop | Story tent | Puzzle activity |
-
-The 2×2 image contains Daniel and James in the top row, and Aisha and Oliver in the bottom row.
-
-Generation direction: realistic, welcoming educational photography; navy, blue, yellow, and coral accents; compositions similar to the reference; no labels, logos, or watermarks. Atlas prompts requested exact equal grids with no gaps. The hero prompt requested a cheerful child with a notebook and backpack, giving a thumbs-up; its dark background is blended into the hero with CSS.
+The older `hero-schoolboy.png`, `children-atlas.png`, and `teachers-atlas.png` files are retained but are no longer referenced by the website.
 
 ## Fonts
 
@@ -38,4 +23,4 @@ The TTF files are bundled locally. Both font families use the SIL Open Font Lice
 
 ## Icons
 
-Lucide icons are provided by the `lucide-react` dependency, under its ISC license: https://lucide.dev/license. Icon licensing remains with that package. The small Kidvero lettermark and geometric clipping paths are implemented as editable SVG geometry.
+Lucide icons are provided by the `lucide-react` dependency, under its ISC license: https://lucide.dev/license. Icon licensing remains with that package. The favicon interprets the supplied sun and mountain mark as SVG geometry. Photo clipping paths are also editable SVG geometry.

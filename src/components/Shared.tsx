@@ -1,47 +1,12 @@
-import { useLayoutEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import type { CSSProperties, ReactNode } from 'react';
 import { ArrowUpRight, ChevronRight, PartyPopper, Rainbow, Sparkles, Star, Sun, Zap } from 'lucide-react';
 import { Link } from '../lib/router';
 import { Reveal } from './ui/Reveal';
 
-// Equal-sized panels in the bundled original photo atlases. To use a normal
-// photograph, pass a new local image path; it falls back to a standard <img>.
-const photoCells: Record<string, [number, number, 'children' | 'teachers']> = {
-  'reading': [0, 0, 'children'],
-  'early-learners': [1, 0, 'children'],
-  'preschool': [2, 2, 'children'],
-  'pre-k': [0, 2, 'children'],
-  'creative-art': [2, 0, 'children'],
-  'child': [0, 1, 'children'],
-  'outdoor': [1, 1, 'children'],
-  'family': [2, 1, 'children'],
-  'laptop': [0, 2, 'children'],
-  'story-time': [1, 2, 'children'],
-  'puzzle': [2, 2, 'children'],
-  'teacher-1': [0, 0, 'teachers'],
-  'teacher-2': [1, 0, 'teachers'],
-  'teacher-3': [0, 1, 'teachers'],
-  'teacher-4': [1, 1, 'teachers'],
-  'parent-1': [0, 1, 'teachers'],
-};
+// Use the supplied academy photographs consistently across all pages.
 export function Photo({ src, alt, className = '', eager = false }: { src: string; alt: string; className?: string; eager?: boolean }) {
-  const cell = photoCells[src];
-  const ref = useRef<HTMLDivElement>(null);
-  useLayoutEffect(() => {
-    const node = ref.current;
-    if (!node || !cell) return;
-    const measure = () => node.style.setProperty('--photo-size', `${Math.max(node.clientWidth, node.clientHeight)}px`);
-    measure();
-    const observer = new ResizeObserver(measure);
-    observer.observe(node);
-    return () => observer.disconnect();
-  }, [src, cell]);
-  if (!cell) return <div ref={ref} className={`photo ${className}`}><img src={src} alt={alt} loading={eager ? 'eager' : 'lazy'} /></div>;
-  const [x, y, atlas] = cell;
-  const columns = atlas === 'children' ? 3 : 2;
-  return <div ref={ref} className={`photo photo-atlas ${className}`} role="img" aria-label={alt}>
-    <div className="atlas-cell"><img aria-hidden="true" alt="" loading={eager ? 'eager' : 'lazy'} src={`/images/${atlas}-atlas.png`} style={{ width: `${columns * 100}%`, height: `${columns * 100}%`, left: `${x * -100}%`, top: `${y * -100}%` }} /></div>
-  </div>;
+  return <div className={`photo ${className}`}><img src={src} alt={alt} loading={eager ? 'eager' : 'lazy'} decoding="async" /></div>;
 }
 
 export function ButtonLink({ to, children, className = '', outline = false }: { to: string; children: ReactNode; className?: string; outline?: boolean }) {

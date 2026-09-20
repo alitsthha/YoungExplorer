@@ -1,10 +1,10 @@
-# Kidvero — React + TypeScript
+# Young Explorers Academy — React + TypeScript
 
-A complete, responsive kindergarten website inspired by the supplied Kidvero reference. Built with **React 19, TypeScript, Vite 8, Lucide icons, and custom CSS**. No WordPress, Elementor, paid plugin, or backend is required to run it.
+A complete, responsive kindergarten website branded using the supplied Young Explorers Academy logo, brand guide, and academy photographs. Built with **React 19, TypeScript, Vite 8, Lucide icons, and custom CSS**. No WordPress, Elementor, paid plugin, or backend is required to run it.
 
 ## Start the project
 
-Install **Node.js 22.13 or newer** (Node 24 LTS is also suitable), then extract this ZIP and open the `kidvero-react` folder in VS Code.
+Install **Node.js 22.13 or newer** (Node 24 LTS is also suitable), then open the project folder in VS Code.
 
 In the VS Code terminal:
 
@@ -48,12 +48,12 @@ The production website is created in `dist/`. A prebuilt `dist/` is also include
 
 ## Design and interactions
 
-- Navy hero, coral pill buttons, yellow class cards, cream section backgrounds, and wavy separators.
+- Adventure Blue hero, Sunshine Yellow buttons, Exploration Green accents, light section backgrounds, and the existing wavy separators.
 - Rounded Nunito headings and Poppins body text, bundled locally.
 - Scroll reveals, staggered cards, animated number counters, floating decorative icons, image hover transitions, and reduced-motion support.
 - Sticky navigation with dropdowns and a mobile menu.
 - Working class filters, program detail links, and preselected enrollment programs.
-- Teacher profile dialogs, parent-story carousel with swipe support, and a four-slide school photo tour.
+- Teaching-team dialogs, parent-story carousel with swipe support, and a 37-photo academy gallery.
 - Expandable FAQ accordions and monthly/yearly pricing controls.
 - Keyboard-friendly controls, labeled forms, native dialog focus management, skip navigation, and a back-to-top button.
 
@@ -78,11 +78,9 @@ The color palette is defined in `:root` near the top of `src/styles.css`. Change
 
 ## Images
 
-The supplied photographs were generated for this implementation to closely follow the reference's compositions. They are **not the original commercial template photographs**.
+The site uses the supplied academy logo and photographs from `public/images/Logo/` and `public/images/Gallery/`. Section image assignments and the complete photo tour are defined in `src/data/content.ts`. The existing image animations and geometric photo masks are preserved.
 
-There are three local image files: a hero portrait, a 3×3 children/activity photo atlas, and a 2×2 teacher portrait atlas. `Photo` displays individual atlas panels without separate network downloads. It uses a `ResizeObserver` to keep the crop correct in different layouts.
-
-To replace an image, add a JPG, PNG, or WebP to `public/images/`, then change the relevant path in `src/data/content.ts`. For a path not listed in `photoCells`, `Photo` automatically uses a normal `<img>` element. Teacher portraits can be replaced in the same way. See `ASSETS.md` for the image mapping and font notices.
+To replace an image, add a JPG, PNG, or WebP to `public/images/` and update its path in `src/data/content.ts`. See `ASSETS.md` for brand colors, image provenance, and font notices.
 
 ## Forms and backend connection
 
@@ -104,11 +102,9 @@ Upload the output of `npm run build` to a static website host. Configure the hos
 
 ## Reference and scope
 
-Reference: https://themeforest.net/item/kidvero-kindergarten-child-care-elementor-template-kit/62589092
+The supplied academy brand guide, logo, and gallery are the references for this rebrand. The existing React page structure, interactive components, and animation timings are retained.
 
-This is an independently written React recreation based on the publisher's page screenshots, with the homepage section order and major visual treatments closely followed. It is not the original Elementor kit. Copy and images are original demo replacements; a photo slideshow replaces the reference's video trigger. The live preview's security check prevented frame-by-frame verification of the original animations, so equivalent animations were implemented independently.
-
-School names, teacher profiles, reviews, statistics, addresses, prices, and schedules are demonstration content. Replace these and the preview policy pages with your confirmed school details before launch.
+Program descriptions, reviews, statistics, addresses, prices, and schedules remain demonstration content. Replace these and the preview policy pages with confirmed school details before launch.
 
 ## Verification
 

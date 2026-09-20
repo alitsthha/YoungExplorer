@@ -11,7 +11,7 @@ const pages = [
 ];
 
 export function Logo() {
-  return <Link to="/" className="logo" aria-label="Kidvero home"><svg viewBox="0 0 30 42" aria-hidden="true"><path d="M5 5v32M25 5 9 21l16 16" stroke="#ff7a80" strokeWidth="7" strokeLinecap="round" strokeLinejoin="round" fill="none"/><path d="m25 5-8 8" stroke="#ffda6c" strokeWidth="7" strokeLinecap="round"/></svg><span>idvero</span></Link>;
+  return <Link to="/" className="logo" aria-label="Young Explorers Academy home"><img src="/images/Logo/logo.png" alt="Young Explorers Academy" width={1648} height={579} /></Link>;
 }
 
 export function Header() {
@@ -49,8 +49,8 @@ export function Footer() {
     <div className="footer-about"><Logo /><p>A warm place for little learners to play, discover, and grow. Making happy memories, one school day at a time.</p><Newsletter /></div>
     <div><h3>Quick Links</h3><nav aria-label="Footer navigation">{[['Home', '/'], ['About Us', '/about'], ['Our Classes', '/classes'], ['Activities', '/activities'], ['Teachers', '/teachers']].map(([label, url]) => <Link key={url} to={url}>{label}</Link>)}</nav></div>
     <div><h3>Our Programs</h3><nav aria-label="Program links">{programs.slice(0, 5).map(p => <Link key={p.slug} to={`/classes/${p.slug}`}>{p.title.replace(' Program', '')}</Link>)}</nav></div>
-    <div className="footer-contact"><h3>Contact Info</h3><a href="tel:+12025550128"><Phone size={16} /> +1 (202) 555-0128</a><a href="mailto:hello@kidvero.example"><Mail size={16} /> hello@kidvero.example</a><p><MapPin size={18} /><span>123 Learning Lane,<br />Happy Kids City</span></p><Link to="/contact" className="footer-tour">Come say hello <span aria-hidden="true">↗</span></Link></div>
-  </div><div className="footer-bottom"><p>© {new Date().getFullYear()} Kidvero. All rights reserved.</p><div><Link to="/privacy">Privacy Policy</Link><span aria-hidden="true">|</span><Link to="/terms">Terms & Conditions</Link></div></div></div></footer>;
+    <div className="footer-contact"><h3>Contact Info</h3><a href="tel:+12025550128"><Phone size={16} /> +1 (202) 555-0128</a><a href="mailto:hello@young-explorers-academy.example"><Mail size={16} /> hello@young-explorers-academy.example</a><p><MapPin size={18} /><span>123 Learning Lane,<br />Happy Kids City</span></p><Link to="/contact" className="footer-tour">Come say hello <span aria-hidden="true">↗</span></Link></div>
+  </div><div className="footer-bottom"><p>© {new Date().getFullYear()} Young Explorers Academy. All rights reserved.</p><div><Link to="/privacy">Privacy Policy</Link><span aria-hidden="true">|</span><Link to="/terms">Terms & Conditions</Link></div></div></div></footer>;
 }
 
 export function Layout({ children }: { children: ReactNode }) {

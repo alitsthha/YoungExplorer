@@ -1,15 +1,17 @@
 export const assets = {
-  hero: '/images/hero-schoolboy.png',
-  reading: 'reading',
-  early: 'early-learners',
-  preschool: 'preschool',
-  prek: 'pre-k',
-  art: 'creative-art',
-  child: 'child',
-  outdoor: 'outdoor',
-  family: 'family',
-  laptop: 'laptop',
-  story: 'story-time',
+  hero: '/images/Gallery/758635989_17974083789087640_445313971566741991_n..jpg',
+  reading: '/images/Gallery/775213420_17977997985087640_2461788668490017299_n..jpg',
+  early: '/images/Gallery/778565198_17977997856087640_1968658231480188747_n..jpg',
+  preschool: '/images/Gallery/780024071_17977999494087640_6892820437427729248_n..jpg',
+  prek: '/images/Gallery/774833190_17976980247087640_4137250384706458054_n..jpg',
+  art: '/images/Gallery/774596656_17976980373087640_3856239063817893836_n..jpg',
+  child: '/images/Gallery/777982909_17977998930087640_2962719499811987181_n..jpg',
+  outdoor: '/images/Gallery/753686117_17973304911087640_4456248461430302943_n..jpg',
+  family: '/images/Gallery/766662154_17975864136087640_1016867383154150636_n..jpg',
+  laptop: '/images/Gallery/775799150_17977999296087640_1406222141761297869_n..jpg',
+  story: '/images/Gallery/777851459_17977998012087640_6601087737842884828_n..jpg',
+  team: '/images/Gallery/711630946_17964808338087640_4186067007734961153_n..jpg',
+  banner: '/images/Gallery/742111074_17971381986087640_6969529160507688559_n..jpg',
 };
 
 export const programs = [
@@ -22,14 +24,14 @@ export const programs = [
 ];
 
 export const teachers = [
-  { name: 'Daniel Wilson', role: 'Lead Early Years Teacher', image: 'teacher-1', bio: 'Daniel brings stories, science, and a generous sense of humor to every learning day. He loves helping children discover what they can do.' },
-  { name: 'James Parker', role: 'Preschool Teacher', image: 'teacher-2', bio: 'James creates a calm, encouraging space where each child can grow at their own pace. His favorite classroom moments begin with “What if?”' },
-  { name: 'Aisha Ahmed', role: 'Creative Learning Teacher', image: 'teacher-3', bio: 'Aisha helps little artists express their ideas through color, movement, and music. She believes every child has a story worth sharing.' },
-  { name: 'Oliver Bennett', role: 'Kindergarten Teacher', image: 'teacher-4', bio: 'Oliver turns everyday questions into playful investigations. He enjoys nature walks, building projects, and celebrating small achievements.' },
+  { name: 'Early Years Team', role: 'Care & connection', image: '/images/Gallery/775213420_17977997985087640_2461788668490017299_n..jpg', alt: 'Children exploring an activity with their teachers', bio: 'Gentle guidance, familiar routines, and patient encouragement help our youngest learners feel at home.' },
+  { name: 'Creative Learning Team', role: 'Expression & imagination', image: '/images/Gallery/774596656_17976980373087640_3856239063817893836_n..jpg', alt: 'A learner proudly sharing a creative project', bio: 'Open-ended projects give children room to explore materials, share ideas, and find their own way to create.' },
+  { name: 'Outdoor Learning Team', role: 'Nature & discovery', image: '/images/Gallery/753686117_17973304911087640_4456248461430302943_n..jpg', alt: 'Children and educators exploring the forest', bio: 'Shared outdoor adventures make space for questions, friendship, and a closer connection with nature.' },
+  { name: 'Our Academy Community', role: 'Learning & belonging', image: '/images/Gallery/766662154_17975864136087640_1016867383154150636_n..jpg', alt: 'The academy community gathered together', bio: 'Every child belongs to a wider community. Shared experiences bring children, educators, and families together.' },
 ];
 
 export const faqs = [
-  { question: 'Which ages can join Kidvero?', answer: 'Our programs cover ages 2 to 6, with small groups for toddlers, preschoolers, and children preparing for kindergarten. We help families choose a group that suits their child’s stage.' },
+  { question: 'Which ages can join Young Explorers Academy?', answer: 'Our programs cover ages 2 to 6, with small groups for toddlers, preschoolers, and children preparing for kindergarten. We help families choose a group that suits their child’s stage.' },
   { question: 'What does a typical day look like?', answer: 'A balanced day includes a warm welcome, free play, small-group learning, snacks, outdoor exploration, creative activities, and quiet time. Familiar routines help children feel comfortable.' },
   { question: 'How do you keep children safe?', answer: 'Our approach includes supervised play, age-appropriate spaces, clear collection procedures, and regular conversations with families. A tour is a good time to discuss your child’s individual needs.' },
   { question: 'Who will teach my child?', answer: 'Each group has a dedicated early-years educator who gets to know the children and their families. Meet the team on our Teachers page or arrange a visit to see a class in action.' },
@@ -41,9 +43,9 @@ export const faqs = [
 ];
 
 export const testimonials = [
-  { name: 'Emma Thompson', relation: 'Mother of a preschool learner', quote: 'The little things make such a difference: a warm welcome, a teacher who listens, and a new story to tell at the end of every day. Our daughter has found her confidence here.', image: 'parent-1' },
-  { name: 'David Morgan', relation: 'Father of a pre-K learner', quote: 'We wanted a place where our son could be himself. He comes home full of questions, new songs, and happy memories. Seeing him excited about learning has been wonderful.', image: 'teacher-2' },
-  { name: 'Sofia Williams', relation: 'Mother of an early learner', quote: 'Starting preschool felt like a big step. The gentle settling-in routine helped all of us, and now our little one runs in to greet her friends every morning.', image: 'teacher-3' },
+  { name: 'Emma Thompson', relation: 'Mother of a preschool learner', quote: 'The little things make such a difference: a warm welcome, a teacher who listens, and a new story to tell at the end of every day. Our daughter has found her confidence here.', initials: 'ET' },
+  { name: 'David Morgan', relation: 'Father of a pre-K learner', quote: 'We wanted a place where our son could be himself. He comes home full of questions, new songs, and happy memories. Seeing him excited about learning has been wonderful.', initials: 'DM' },
+  { name: 'Sofia Williams', relation: 'Mother of an early learner', quote: 'Starting preschool felt like a big step. The gentle settling-in routine helped all of us, and now our little one runs in to greet her friends every morning.', initials: 'SW' },
 ];
 
 export const articles = [
@@ -65,4 +67,45 @@ export const articles = [
     ['Count during everyday tasks', 'Set out cups, sort socks, or count the steps to the garden. Real objects help children connect number words with things they can touch and move.'],
     ['Make music and make a mess', 'Clap a rhythm, sing a familiar song, paint with water, or explore play dough. Choose safe materials and enjoy the process together, without needing a perfect result.'],
   ] },
+];
+
+// Original academy photographs, served locally without third-party requests.
+export const schoolGallery = [
+  { src: '/images/Gallery/1.jpg', title: 'Outdoor play and games', text: 'A moment from life at Young Explorers Academy.' },
+  { src: '/images/Gallery/670236112_17958748455087640_8986407078884567280_n..jpg', title: 'Learning in the garden', text: 'A moment from life at Young Explorers Academy.' },
+  { src: '/images/Gallery/670802539_17958750093087640_8010737360905292500_n..jpg', title: 'A hands-on discovery', text: 'A moment from life at Young Explorers Academy.' },
+  { src: '/images/Gallery/711630946_17964808338087640_4186067007734961153_n..jpg', title: 'Our academy team', text: 'A moment from life at Young Explorers Academy.' },
+  { src: '/images/Gallery/742111074_17971381986087640_6969529160507688559_n..jpg', title: 'Growing together', text: 'A moment from life at Young Explorers Academy.' },
+  { src: '/images/Gallery/753686117_17973304911087640_4456248461430302943_n..jpg', title: 'A forest adventure', text: 'A moment from life at Young Explorers Academy.' },
+  { src: '/images/Gallery/753933066_17973304881087640_7587009646347083425_n..jpg', title: 'Exploring the trail', text: 'A moment from life at Young Explorers Academy.' },
+  { src: '/images/Gallery/754046459_17973304836087640_1346310118343170192_n..jpg', title: 'Little steps in nature', text: 'A moment from life at Young Explorers Academy.' },
+  { src: '/images/Gallery/757455184_17974084602087640_5682780202118846465_n..jpg', title: 'Discovering our community', text: 'A moment from life at Young Explorers Academy.' },
+  { src: '/images/Gallery/758395820_17974084767087640_955724701434215274_n..jpg', title: 'A moment in the outdoors', text: 'A moment from life at Young Explorers Academy.' },
+  { src: '/images/Gallery/758635989_17974083789087640_445313971566741991_n..jpg', title: 'Proud little learners', text: 'A moment from life at Young Explorers Academy.' },
+  { src: '/images/Gallery/763811128_1683035660497514_8167762015243196576_n..jpg', title: 'A walk on the wild side', text: 'A moment from life at Young Explorers Academy.' },
+  { src: '/images/Gallery/765175892_17975568603087640_6075638116201135413_n..jpg', title: 'Learning beyond the classroom', text: 'A moment from life at Young Explorers Academy.' },
+  { src: '/images/Gallery/766147205_17975863917087640_3616330027367717205_n..jpg', title: 'A day of water play', text: 'A moment from life at Young Explorers Academy.' },
+  { src: '/images/Gallery/766544655_17975568642087640_8159387216552451540_n..jpg', title: 'A little rainy-day adventure', text: 'A moment from life at Young Explorers Academy.' },
+  { src: '/images/Gallery/766662154_17975864136087640_1016867383154150636_n..jpg', title: 'Our academy community', text: 'A moment from life at Young Explorers Academy.' },
+  { src: '/images/Gallery/767243255_17976388917087640_6077361798674705621_n..jpg', title: 'A splash of happiness', text: 'A moment from life at Young Explorers Academy.' },
+  { src: '/images/Gallery/774596656_17976980373087640_3856239063817893836_n..jpg', title: 'Made with imagination', text: 'A moment from life at Young Explorers Academy.' },
+  { src: '/images/Gallery/774788182_17976980415087640_4974287569850087616_n..jpg', title: 'Reaching new heights', text: 'A moment from life at Young Explorers Academy.' },
+  { src: '/images/Gallery/774833190_17976980247087640_4137250384706458054_n..jpg', title: 'Celebrating every achievement', text: 'A moment from life at Young Explorers Academy.' },
+  { src: '/images/Gallery/775166889_17977999374087640_2099899758233093129_n..jpg', title: 'Discovering local traditions', text: 'A moment from life at Young Explorers Academy.' },
+  { src: '/images/Gallery/775213420_17977997985087640_2461788668490017299_n..jpg', title: 'Making and learning together', text: 'A moment from life at Young Explorers Academy.' },
+  { src: '/images/Gallery/775280571_17978001051087640_3443872459565289741_n..jpg', title: 'Exploring our heritage', text: 'A moment from life at Young Explorers Academy.' },
+  { src: '/images/Gallery/775799150_17977999296087640_1406222141761297869_n..jpg', title: 'Friendship and discovery', text: 'A moment from life at Young Explorers Academy.' },
+  { src: '/images/Gallery/776100985_17977999314087640_4310472790016784753_n..jpg', title: 'An everyday adventure', text: 'A moment from life at Young Explorers Academy.' },
+  { src: '/images/Gallery/777851459_17977998012087640_6601087737842884828_n..jpg', title: 'Celebrating together', text: 'A moment from life at Young Explorers Academy.' },
+  { src: '/images/Gallery/777851461_17978000754087640_8914441800792142805_n..jpg', title: 'A new way to explore', text: 'A moment from life at Young Explorers Academy.' },
+  { src: '/images/Gallery/777948242_17977997826087640_9067701903931635830_n..jpg', title: 'Happy moments with friends', text: 'A moment from life at Young Explorers Academy.' },
+  { src: '/images/Gallery/777982909_17977998930087640_2962719499811987181_n..jpg', title: 'Growing with nature', text: 'A moment from life at Young Explorers Academy.' },
+  { src: '/images/Gallery/778565198_17977997856087640_1968658231480188747_n..jpg', title: 'A very special day', text: 'A moment from life at Young Explorers Academy.' },
+  { src: '/images/Gallery/778794224_17977998066087640_8387950399133694154_n..jpg', title: 'Time to celebrate', text: 'A moment from life at Young Explorers Academy.' },
+  { src: '/images/Gallery/780024071_17977999494087640_6892820437427729248_n..jpg', title: 'Hands-on outdoor learning', text: 'A moment from life at Young Explorers Academy.' },
+  { src: '/images/Gallery/780619802_17977999278087640_552755670126777521_n..jpg', title: 'Curiosity in action', text: 'A moment from life at Young Explorers Academy.' },
+  { src: '/images/Gallery/780702175_17978000982087640_7661009874535361218_n..jpg', title: 'A world beyond the classroom', text: 'A moment from life at Young Explorers Academy.' },
+  { src: '/images/Gallery/780949610_17977999329087640_5652128031770456245_n..jpg', title: 'Learning through experience', text: 'A moment from life at Young Explorers Academy.' },
+  { src: '/images/Gallery/781163769_17977999359087640_2746452966096676493_n..jpg', title: 'Little explorers, big adventures', text: 'A moment from life at Young Explorers Academy.' },
+  { src: '/images/Gallery/781207533_17978001009087640_2180159510811775563_n..jpg', title: 'Shared adventures and memories', text: 'A moment from life at Young Explorers Academy.' },
 ];

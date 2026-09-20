@@ -1,29 +1,25 @@
-# Validation record
+# Young Explorers Academy rebrand validation
 
-Checked on 19 September 2026.
+Checked on 20 September 2026 in Chromium.
 
-## Build
+## Build and brand
 
-- Dependencies installed successfully from the included package manifest and lockfile.
-- TypeScript validation and Vite production build passed.
-- ZIP contains source code, local assets, documentation, and the production build. Dependencies are installed separately with `npm install`.
+- TypeScript and Vite production build passed; `git diff --check` passed.
+- Verified the supplied logo appears in the header and footer, with a matching sun-and-mountain favicon.
+- Verified computed brand tokens match the PDF: `#0077cc`, `#00cc66`, and `#ffcc00`.
+- No previous brand names or stock-photo references remain in the rendered pages.
 
 ## Browser checks
 
-- Desktop homepage visually inspected against the available publisher screenshot.
-- Desktop, 820 px tablet, and 390 px mobile layouts inspected.
-- Corrected horizontal overflow from scroll-reveal transforms and verified the mobile document width equals its scroll width.
-- Corrected responsive atlas cropping and verified square source crop dimensions match the displayed photo.
-- Checked mobile menu open/close and About navigation, desktop dropdown navigation, class filters, class detail links, and enrollment program preselection.
-- Checked FAQ expansion, teacher-profile dialogs, testimonial navigation, and photo-tour next/close controls.
-- Checked required enrollment inputs and frontend preview response using synthetic contact data. Input values persist after preview submission.
-- Checked monthly/yearly pricing: $150/$280/$180 monthly changes to $1,620/$3,024/$1,944 annually.
-- Verified animated decorations change transforms over time; scroll reveal progresses from partial opacity to 1 and finishes with no transform. See ANIMATIONS.md.
+- Visually inspected the homepage at 1440 px desktop, 820/1024 px tablet, and 390 px mobile widths.
+- All 21 content routes checked at 390 px; no horizontal overflow. The homepage also fits at 320 px.
+- All 26 homepage image elements and all 37 unique gallery photographs decode successfully.
+- All 42 homepage scroll-reveal elements become visible when scrolled into view; floating decorations remain animated.
+- Emulated reduced motion: reveal opacity is 1 and decorative animation duration is reduced to 0.01 ms.
+- Checked mobile menu expansion, FAQ expansion, teaching-team dialog opening/closing, gallery next/close controls, and testimonial navigation.
+- Class filtering returns three enrichment programs; the admissions form preserves the selected program from the URL.
+- No application JavaScript exceptions during these checks.
 
-## Limits
+## Existing preview limitations
 
-The original live preview presented a security challenge, preventing inspection of the original animation sequence and exact timings. The implementation follows the publisher screenshot's homepage structure and visual style, with independently written animations and original generated imagery. Inner pages follow the same design system.
-
-Browser observations included extension-generated metadata errors unrelated to the application. These are not application test failures.
-
-Forms run in frontend demo mode by default. No real email delivery, booking, payment, or backend integration was tested. Reduced-motion CSS and component fallbacks were reviewed in source, without simulating operating-system settings. This is focused manual QA, not a cross-browser certification or comprehensive accessibility audit.
+Contact details, prices, schedules, statistics, and testimonial text remain illustrative. Forms remain in their existing frontend preview mode unless a form endpoint is configured. No live message delivery, booking, payment, or backend integration was tested. This was a focused Chromium review, not a cross-browser or comprehensive accessibility audit.
