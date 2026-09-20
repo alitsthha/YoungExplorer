@@ -1,6 +1,6 @@
 # Young Explorers Academy — React + TypeScript
 
-A complete, responsive kindergarten website branded using the supplied Young Explorers Academy logo, brand guide, and academy photographs. Built with **React 19, TypeScript, Vite 8, Lucide icons, and custom CSS**. No WordPress, Elementor, paid plugin, or backend is required to run it.
+A complete, responsive children’s learning-centre website branded using the supplied Young Explorers Academy logo, brand guide, and academy photographs. Built with **React 19, TypeScript, Vite 8, Lucide icons, and custom CSS**. No WordPress, Elementor, paid plugin, or backend is required to run it.
 
 ## Start the project
 
@@ -33,15 +33,15 @@ The production website is created in `dist/`. A prebuilt `dist/` is also include
 | --- | --- |
 | Home | `/` |
 | About | `/about` |
-| Classes with category filters | `/classes` |
-| Six individual class pages | `/classes/early-learners`, `/classes/preschool-foundations`, `/classes/pre-k-preparation`, `/classes/creative-arts`, `/classes/music-movement`, `/classes/little-explorers` |
+| Programmes with category filters | `/classes` |
+| Six programme detail pages (existing URLs retained) | `/classes/early-learners`, `/classes/preschool-foundations`, `/classes/pre-k-preparation`, `/classes/creative-arts`, `/classes/music-movement`, `/classes/little-explorers` |
 | Activities and daily schedule | `/activities` |
 | Admissions and enrollment | `/admissions` |
 | Teachers | `/teachers` |
-| Monthly/yearly pricing | `/pricing` |
+| Programme fees in NPR | `/pricing` |
 | FAQs | `/faqs` |
 | Blog archive | `/blog` |
-| Three article pages | `/blog/building-your-childs-confidence`, `/blog/happy-daily-routines`, `/blog/playful-early-learning` |
+| Three article pages | `/blog/kids-carnival-kathmandu`, `/blog/stories-and-art`, `/blog/outdoor-learning-moments` |
 | Contact | `/contact` |
 | Preview privacy and terms | `/privacy`, `/terms` |
 | Custom 404 | Any unknown route |
@@ -53,8 +53,8 @@ The production website is created in `dist/`. A prebuilt `dist/` is also include
 - Scroll reveals, staggered cards, animated number counters, floating decorative icons, image hover transitions, and reduced-motion support.
 - Sticky navigation with dropdowns and a mobile menu.
 - Working class filters, program detail links, and preselected enrollment programs.
-- Teaching-team dialogs, parent-story carousel with swipe support, and a 37-photo academy gallery.
-- Expandable FAQ accordions and monthly/yearly pricing controls.
+- Learning-community dialogs, academy-experience carousel with swipe support, and a 37-photo academy gallery.
+- Expandable FAQ accordions and programme fee enquiries in Nepali rupees.
 - Keyboard-friendly controls, labeled forms, native dialog focus management, skip navigation, and a back-to-top button.
 
 See `ANIMATIONS.md` for effect timings, reusable components, and verification details.
@@ -64,7 +64,7 @@ See `ANIMATIONS.md` for effect timings, reusable components, and verification de
 | File | Purpose |
 | --- | --- |
 | `src/styles.css` | All styling, colors, responsive breakpoints, and animations |
-| `src/data/content.ts` | Programs, prices, teachers, FAQs, testimonials, articles, and image names |
+| `src/data/content.ts` | Academy profile, programmes, NPR fees, learning themes, FAQs, journal articles, and gallery |
 | `src/components/Sections.tsx` | Homepage sections, shared forms, and interactive content |
 | `src/components/Layout.tsx` | Logo, header, navigation, and footer |
 | `src/components/Shared.tsx` | Photo renderer, buttons, headings, and geometric photo masks |
@@ -104,7 +104,7 @@ Upload the output of `npm run build` to a static website host. Configure the hos
 
 The supplied academy brand guide, logo, and gallery are the references for this rebrand. The existing React page structure, interactive components, and animation timings are retained.
 
-Program descriptions, reviews, statistics, addresses, prices, and schedules remain demonstration content. Replace these and the preview policy pages with confirmed school details before launch.
+See `CONTENT_SOURCES.md` for verified Instagram positioning, event references, and limits of the Google profile lookup. Exact contact details and the current fee schedule still require confirmation. Fees use `Rs.` / NPR throughout; unverified amounts are shown as contact-for-fees. Forms remain in preview mode until an endpoint is configured.
 
 ## Verification
 

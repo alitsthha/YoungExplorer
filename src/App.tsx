@@ -12,7 +12,7 @@ function Routes() {
       if (hash) document.getElementById(hash)?.scrollIntoView({ block: 'start', behavior: 'instant' });
       else { window.scrollTo({ top: 0, behavior: 'instant' }); document.querySelector<HTMLHeadingElement>('h1')?.focus({ preventScroll: true }); }
       const title = document.querySelector('h1')?.textContent?.replace(/\s+/g, ' ').trim();
-      document.title = path === '/' ? 'Young Explorers Academy — Kindergarten & Child Care' : `${title || 'Page Not Found'} | Young Explorers Academy`;
+      document.title = path === '/' ? 'Young Explorers Academy — Skill-Based Learning in Kathmandu' : `${title || 'Page Not Found'} | Young Explorers Academy`;
     });
     return () => cancelAnimationFrame(frame);
   }, [location, path]);

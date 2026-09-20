@@ -280,3 +280,42 @@ main{overflow-x:clip}
   .logo{width:169px}.page-hero h1{font-size:34px;overflow-wrap:break-word}
   .footer-bottom>p{max-width:270px;line-height:1.8}
 }
+
+/* Programme information and Nepali rupee fee displays. */
+.fee-on-request{display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+.plan-price.fee-on-request strong,.detail-sidebar .fee-on-request{font-size:29px;line-height:1.25;letter-spacing:-.025em}
+.fee-on-request small{display:block;font:400 13px/1.5 var(--body);letter-spacing:0;color:var(--muted)}
+.program-facts .program-fee{white-space:normal;color:var(--green-ink);font-weight:500}
+.stat>svg{width:26px;height:26px;color:var(--green-ink);margin-bottom:13px}
+.stat strong{font-size:clamp(25px,3vw,38px)}
+.rating-box small{display:block;margin-top:5px;overflow-wrap:anywhere}.rating-box>div{min-width:0}
+.academy-highlight .eyebrow{color:var(--yellow)}.academy-highlight h3{font-size:29px;margin-bottom:20px}
+.academy-highlight>p{font-size:15px;line-height:1.8;color:white;margin:0 0 24px}
+.academy-highlight .text-link{color:var(--yellow)}
+.article-source{margin-top:20px;color:var(--green-ink)}
+@media(min-width:761px) and (max-width:980px){.header-inner{gap:12px}.header-inner .logo{width:165px}.main-navigation{gap:15px}.header-cta{padding-inline:18px}}
+@media(max-width:480px){.academy-highlight h3{font-size:23px}.academy-highlight>p{font-size:13px}.academy-highlight .text-link{font-size:12px}.stat p{font-size:12px}}
+
+/* Keep the supplied adventure photograph close to its native resolution. */
+.tour-banner.adventure-banner{height:auto;padding:74px 0;background:linear-gradient(125deg,var(--navy),#075c90)}
+.adventure-banner .tour-banner-layout{display:grid;grid-template-columns:.95fr 1.05fr;align-items:center;gap:64px}
+.adventure-banner .tour-banner-content{padding:0;text-align:left;min-width:0}
+.adventure-banner .tour-banner-content .eyebrow{color:var(--yellow-light);margin-bottom:20px}
+.adventure-banner .tour-banner-content h2{font-size:clamp(34px,3.6vw,49px);max-width:470px;line-height:1.12;margin:0}
+.adventure-banner .tour-banner-content p{max-width:410px;margin:23px 0 30px;line-height:1.75}
+.adventure-banner .tour-banner-visual{min-width:0;position:relative}
+.adventure-banner .tour-banner-visual::before{content:'';position:absolute;width:104px;height:104px;right:-20px;top:-22px;border-radius:50%;background:var(--yellow)}
+.adventure-banner .tour-banner-image{position:relative;inset:auto;width:100%;height:510px;border:6px solid white;border-radius:28px;box-shadow:0 18px 45px #062f4b33}
+.adventure-banner .tour-banner-image>img{object-fit:cover;object-position:center 72%}
+@media(max-width:980px){
+  .adventure-banner .tour-banner-layout{gap:34px;grid-template-columns:1fr 1fr}
+  .adventure-banner .tour-banner-image{height:440px}
+}
+@media(max-width:760px){
+  .tour-banner.adventure-banner{padding:62px 0}
+  .adventure-banner .tour-banner-layout{grid-template-columns:1fr;gap:35px;max-width:560px}
+  .adventure-banner .tour-banner-content{text-align:center}
+  .adventure-banner .tour-banner-content h2,.adventure-banner .tour-banner-content p{margin-inline:auto}
+  .adventure-banner .tour-banner-image{height:auto;aspect-ratio:4/5;border-width:5px;border-radius:22px}
+  .adventure-banner .tour-banner-visual::before{width:75px;height:75px;right:-10px;top:-14px}
+}

@@ -23,3 +23,16 @@ Checked on 20 September 2026 in Chromium.
 ## Existing preview limitations
 
 Contact details, prices, schedules, statistics, and testimonial text remain illustrative. Forms remain in their existing frontend preview mode unless a form endpoint is configured. No live message delivery, booking, payment, or backend integration was tested. This was a focused Chromium review, not a cross-browser or comprehensive accessibility audit.
+
+## Academy information and NPR update — 20 September 2026
+
+- Retrieved the public Instagram profile metadata and verified skill-based learning-centre positioning and Balwatar location. Google business-panel details and the full Instagram feed were not accessible; see `CONTENT_SOURCES.md`.
+- Production build and TypeScript checks passed after the content update.
+- All 21 current content routes rendered at 390 px without horizontal overflow, dollar symbols, placeholder US contacts, or unexpected 404s. Homepage also fits at 320 and 820 px.
+- Verified programme category filtering, FAQ, academy-experience carousel, and mobile menu.
+- Verified programme preselection and successful local enquiry preparation with synthetic form inputs.
+- All pricing cards show contact-for-fees with NPR / Nepali rupees. No old annual-discount or numeric demo prices remain.
+- Verified the currency formatter handles unconfirmed, positive, and zero fees.
+- No application JavaScript exceptions occurred during this pass.
+
+The earlier preview-limit notes describe the initial rebrand. Fictional reviews, numeric claims, contact placeholders, and fixed demo prices have since been removed. Current fees, direct contact details, and opening hours still require academy confirmation. Forms remain in local preview mode.

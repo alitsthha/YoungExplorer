@@ -1,13 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
-import { ArrowUp, ChevronDown, Mail, MapPin, Menu, Phone, X } from 'lucide-react';
+import { ArrowUp, ChevronDown, Camera, MapPin, Menu, X } from 'lucide-react';
 import { Link, useRouter } from '../lib/router';
 import { Doodles, Newsletter, ShapeMasks } from './Shared';
-import { programs } from '../data/content';
+import { academy, programs } from '../data/content';
 
 const pages = [
-  ['Activities', '/activities'], ['Admissions', '/admissions'], ['Teachers', '/teachers'],
-  ['Pricing', '/pricing'], ['FAQs', '/faqs'], ['Blog', '/blog'],
+  ['Activities', '/activities'], ['Admissions', '/admissions'], ['Our Community', '/teachers'],
+  ['Programme Fees', '/pricing'], ['FAQs', '/faqs'], ['Blog', '/blog'],
 ];
 
 export function Logo() {
@@ -35,7 +35,7 @@ export function Header() {
     <nav id="main-navigation" className={`main-navigation ${mobile ? 'open' : ''}`} aria-label="Main navigation">
       <Link to="/" className={path === '/' ? 'active' : ''}>Home</Link>
       <Link to="/about" className={path === '/about' ? 'active' : ''}>About</Link>
-      <div className={`nav-group ${dropdown === 'classes' ? 'expanded' : ''}`}><button className={path.startsWith('/classes') ? 'active' : ''} aria-expanded={dropdown === 'classes'} aria-controls="classes-menu" onClick={() => setDropdown(dropdown === 'classes' ? null : 'classes')}>Classes <ChevronDown size={14} /></button><div id="classes-menu" className="dropdown"><Link to="/classes">All classes</Link>{programs.slice(0, 4).map(program => <Link key={program.slug} to={`/classes/${program.slug}`}>{program.title}</Link>)}</div></div>
+      <div className={`nav-group ${dropdown === 'classes' ? 'expanded' : ''}`}><button className={path.startsWith('/classes') ? 'active' : ''} aria-expanded={dropdown === 'classes'} aria-controls="classes-menu" onClick={() => setDropdown(dropdown === 'classes' ? null : 'classes')}>Programmes <ChevronDown size={14} /></button><div id="classes-menu" className="dropdown"><Link to="/classes">All programmes</Link>{programs.slice(0, 4).map(program => <Link key={program.slug} to={`/classes/${program.slug}`}>{program.title}</Link>)}</div></div>
       <div className={`nav-group ${dropdown === 'pages' ? 'expanded' : ''}`}><button className={pages.some(([, url]) => path.startsWith(url)) ? 'active' : ''} aria-expanded={dropdown === 'pages'} aria-controls="pages-menu" onClick={() => setDropdown(dropdown === 'pages' ? null : 'pages')}>Pages <ChevronDown size={14} /></button><div id="pages-menu" className="dropdown">{pages.map(([label, url]) => <Link to={url} key={url}>{label}</Link>)}</div></div>
       <Link to="/contact" className={path === '/contact' ? 'active' : ''}>Contact</Link>
       <Link to="/admissions#enrollment" className="button mobile-cta">Get Started</Link>
@@ -46,10 +46,10 @@ export function Header() {
 
 export function Footer() {
   return <footer className="site-footer navy"><Doodles light /><div className="container"><div className="footer-grid">
-    <div className="footer-about"><Logo /><p>A warm place for little learners to play, discover, and grow. Making happy memories, one school day at a time.</p><Newsletter /></div>
-    <div><h3>Quick Links</h3><nav aria-label="Footer navigation">{[['Home', '/'], ['About Us', '/about'], ['Our Classes', '/classes'], ['Activities', '/activities'], ['Teachers', '/teachers']].map(([label, url]) => <Link key={url} to={url}>{label}</Link>)}</nav></div>
+    <div className="footer-about"><Logo /><p>A skill-based learning centre in Baluwatar, Kathmandu. Creating space for children to explore, express themselves, and connect.</p><Newsletter /></div>
+    <div><h3>Quick Links</h3><nav aria-label="Footer navigation">{[['Home', '/'], ['About Us', '/about'], ['Our Programmes', '/classes'], ['Activities', '/activities'], ['Our Community', '/teachers']].map(([label, url]) => <Link key={url} to={url}>{label}</Link>)}</nav></div>
     <div><h3>Our Programs</h3><nav aria-label="Program links">{programs.slice(0, 5).map(p => <Link key={p.slug} to={`/classes/${p.slug}`}>{p.title.replace(' Program', '')}</Link>)}</nav></div>
-    <div className="footer-contact"><h3>Contact Info</h3><a href="tel:+12025550128"><Phone size={16} /> +1 (202) 555-0128</a><a href="mailto:hello@young-explorers-academy.example"><Mail size={16} /> hello@young-explorers-academy.example</a><p><MapPin size={18} /><span>123 Learning Lane,<br />Happy Kids City</span></p><Link to="/contact" className="footer-tour">Come say hello <span aria-hidden="true">↗</span></Link></div>
+    <div className="footer-contact"><h3>Connect With Us</h3><a href={academy.instagram} target="_blank" rel="noopener noreferrer"><Camera size={18} /> {academy.instagramHandle}</a><p><MapPin size={18} /><span>{academy.location}</span></p><a href={academy.googleProfile} target="_blank" rel="noopener noreferrer" className="footer-tour">Find us on Google <span aria-hidden="true">↗</span></a><Link to="/contact" className="footer-tour">Programme enquiries <span aria-hidden="true">↗</span></Link></div>
   </div><div className="footer-bottom"><p>© {new Date().getFullYear()} Young Explorers Academy. All rights reserved.</p><div><Link to="/privacy">Privacy Policy</Link><span aria-hidden="true">|</span><Link to="/terms">Terms & Conditions</Link></div></div></div></footer>;
 }
 

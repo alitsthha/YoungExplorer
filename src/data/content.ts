@@ -1,3 +1,23 @@
+// Public source links and confirmed details are documented in CONTENT_SOURCES.md.
+export const academy = {
+  name: 'Young Explorers Academy',
+  location: 'Baluwatar, Kathmandu, Nepal',
+  instagram: 'https://www.instagram.com/young.explorers.academy/',
+  instagramHandle: '@young.explorers.academy',
+  googleProfile: 'https://www.google.com/search?q=Young+Explorers+Academy+Kathmandu',
+  feeNote: 'Contact us for current fees in Nepali rupees (Rs. / NPR).',
+};
+
+// Only add amounts here after the academy confirms its current NPR fee schedule.
+export function formatNPR(amount: number | null): string {
+  return amount === null ? 'Contact for fees' : `Rs. ${new Intl.NumberFormat('en-NP', { maximumFractionDigits: 0 }).format(amount)}`;
+}
+
+export type Program = {
+  slug: string; title: string; image: string; age: string; category: string;
+  priceNPR: number | null; description: string; detail: string; skills: string[];
+};
+
 export const assets = {
   hero: '/images/Gallery/758635989_17974083789087640_445313971566741991_n..jpg',
   reading: '/images/Gallery/775213420_17977997985087640_2461788668490017299_n..jpg',
@@ -11,62 +31,254 @@ export const assets = {
   laptop: '/images/Gallery/775799150_17977999296087640_1406222141761297869_n..jpg',
   story: '/images/Gallery/777851459_17977998012087640_6601087737842884828_n..jpg',
   team: '/images/Gallery/711630946_17964808338087640_4186067007734961153_n..jpg',
-  banner: '/images/Gallery/742111074_17971381986087640_6969529160507688559_n..jpg',
+  banner: '/images/Gallery/753933066_17973304881087640_7587009646347083425_n..jpg',
 };
 
-export const programs = [
-  { slug: 'early-learners', title: 'Early Learners Program', image: assets.early, age: '2–3', students: 15, price: 150, category: 'Toddlers', description: 'Little discoveries, new friendships, and a gentle introduction to learning together.', detail: 'A reassuring first step into a wider world. Our early learners explore sensory play, songs, simple stories, and everyday routines with a familiar, caring teacher.', skills: ['Language and listening', 'Sharing and taking turns', 'Sensory exploration', 'Confidence away from home'] },
-  { slug: 'preschool-foundations', title: 'Preschool Foundations', image: assets.preschool, age: '3–4', students: 18, price: 120, category: 'Preschool', description: 'Hands-on exploration that helps curious children make sense of the world.', detail: 'From building the tallest tower to retelling a favorite story, each day brings meaningful opportunities to practice communication, early number skills, and independence.', skills: ['Early numbers and patterns', 'Creative problem solving', 'Storytelling and vocabulary', 'Friendship and cooperation'] },
-  { slug: 'pre-k-preparation', title: 'Pre-K Preparation', image: assets.prek, age: '4–6', students: 12, price: 180, category: 'Kindergarten', description: 'A happy, confident next step toward school, at a pace that feels right.', detail: 'Our pre-kindergarten program combines purposeful play with early literacy and numeracy. Children learn to ask questions, follow ideas, and feel proud of their progress.', skills: ['Early reading and writing', 'Number confidence', 'Independence and focus', 'Social and emotional readiness'] },
-  { slug: 'creative-arts', title: 'Creative Arts & Crafts', image: assets.art, age: '5–6', students: 16, price: 140, category: 'Enrichment', description: 'A colorful space for imagination, messy making, and big little ideas.', detail: 'Paint, print, build, and imagine. Open-ended art experiences let children experiment with materials, develop fine motor skills, and discover their own way of expressing an idea.', skills: ['Fine motor development', 'Imagination and expression', 'Exploring color and texture', 'Confidence in creating'] },
-  { slug: 'music-movement', title: 'Music & Movement', image: assets.story, age: '3–6', students: 14, price: 130, category: 'Enrichment', description: 'Rhythm, songs, and joyful movement that bring learning to life.', detail: 'Children discover rhythms with simple instruments, explore movement through games, and build listening skills while making music together.', skills: ['Rhythm and coordination', 'Listening and memory', 'Body awareness', 'Group participation'] },
-  { slug: 'little-explorers', title: 'Little Outdoor Explorers', image: assets.outdoor, age: '3–6', students: 14, price: 160, category: 'Enrichment', description: 'Fresh air, nature discoveries, and adventures with friends.', detail: 'Our outdoor explorers look closely at nature, follow their questions, and work together through age-appropriate games and discoveries.', skills: ['Curiosity about nature', 'Balance and coordination', 'Teamwork and resilience', 'Observation and conversation'] },
+export const programs: Program[] = [
+  {
+    "slug": "early-learners",
+    "title": "Holiday Camps",
+    "image": assets.hero,
+    "age": "Ask about age groups",
+    "category": "Camps",
+    "priceNPR": null,
+    "description": "Holidays full of friendship, creative projects, and discoveries beyond the classroom.",
+    "detail": "Our academy gallery brings together camp moments, shared activities, and celebrations. Ask about the next camp, its age groups, dates, and what your child should bring.",
+    "skills": [
+      "Trying new activities",
+      "Making friends",
+      "Creative exploration",
+      "Shared experiences"
+    ]
+  },
+  {
+    "slug": "preschool-foundations",
+    "title": "Outdoor Discovery",
+    "image": assets.preschool,
+    "age": "Ask about age groups",
+    "category": "Outdoor Learning",
+    "priceNPR": null,
+    "description": "Get curious about the natural world through hands-on outdoor experiences.",
+    "detail": "From exploring green spaces to getting hands-on with nature, outdoor experiences invite children to notice, ask questions, and learn together. Contact the team for the next activity and its suitability for your child.",
+    "skills": [
+      "Observation and curiosity",
+      "Connection with nature",
+      "Working together",
+      "Everyday discovery"
+    ]
+  },
+  {
+    "slug": "pre-k-preparation",
+    "title": "Speaking & Self-Expression",
+    "image": assets.prek,
+    "age": "Ask about age groups",
+    "category": "Creative Workshops",
+    "priceNPR": null,
+    "description": "A space for young voices, storytelling, and the courage to share an idea.",
+    "detail": "The academy’s Mic Drop Mini-Star event brought young speakers to the stage at Kids Carnival 2025. Ask about future opportunities for children to practise self-expression and share their creativity.",
+    "skills": [
+      "Speaking with confidence",
+      "Listening to others",
+      "Sharing ideas",
+      "Creative expression"
+    ]
+  },
+  {
+    "slug": "creative-arts",
+    "title": "Creative Arts & Making",
+    "image": assets.art,
+    "age": "Ask about age groups",
+    "category": "Creative Workshops",
+    "priceNPR": null,
+    "description": "Explore colour, texture, and imagination through projects children can make their own.",
+    "detail": "Our gallery celebrates children making and sharing their work. Creative activities offer room to experiment, notice details, and enjoy the process of bringing an idea to life.",
+    "skills": [
+      "Exploring materials",
+      "Imagination",
+      "Hands-on making",
+      "Sharing creative work"
+    ]
+  },
+  {
+    "slug": "music-movement",
+    "title": "Stories & Performance",
+    "image": assets.reading,
+    "age": "Ask about age groups",
+    "category": "Creative Workshops",
+    "priceNPR": null,
+    "description": "Bring stories to life through participation, imagination, and creative play.",
+    "detail": "The Joy House Collective has shared a storytelling and art session at Young Explorers Academy featuring “Stuck”. Contact us about upcoming storytelling experiences and workshops.",
+    "skills": [
+      "Listening and imagination",
+      "Responding to stories",
+      "Creative participation",
+      "Art and expression"
+    ]
+  },
+  {
+    "slug": "little-explorers",
+    "title": "Family Events & Adventures",
+    "image": assets.family,
+    "age": "Ask about age groups",
+    "category": "Family Events",
+    "priceNPR": null,
+    "description": "Shared experiences that bring children, families, and the wider community together.",
+    "detail": "Our community activities include Kids Carnival and outdoor experiences. Follow our announcements for future events, venues, registration details, and age guidance.",
+    "skills": [
+      "Community connection",
+      "Family time",
+      "Exploring together",
+      "New experiences"
+    ]
+  }
 ];
 
 export const teachers = [
-  { name: 'Early Years Team', role: 'Care & connection', image: '/images/Gallery/775213420_17977997985087640_2461788668490017299_n..jpg', alt: 'Children exploring an activity with their teachers', bio: 'Gentle guidance, familiar routines, and patient encouragement help our youngest learners feel at home.' },
+  { name: 'Learning Through Stories', role: 'Stories & connection', image: '/images/Gallery/775213420_17977997985087640_2461788668490017299_n..jpg', alt: 'Children exploring an activity with their teachers', bio: 'Shared stories and hands-on activities invite children to listen, imagine, and participate.' },
   { name: 'Creative Learning Team', role: 'Expression & imagination', image: '/images/Gallery/774596656_17976980373087640_3856239063817893836_n..jpg', alt: 'A learner proudly sharing a creative project', bio: 'Open-ended projects give children room to explore materials, share ideas, and find their own way to create.' },
   { name: 'Outdoor Learning Team', role: 'Nature & discovery', image: '/images/Gallery/753686117_17973304911087640_4456248461430302943_n..jpg', alt: 'Children and educators exploring the forest', bio: 'Shared outdoor adventures make space for questions, friendship, and a closer connection with nature.' },
   { name: 'Our Academy Community', role: 'Learning & belonging', image: '/images/Gallery/766662154_17975864136087640_1016867383154150636_n..jpg', alt: 'The academy community gathered together', bio: 'Every child belongs to a wider community. Shared experiences bring children, educators, and families together.' },
 ];
 
 export const faqs = [
-  { question: 'Which ages can join Young Explorers Academy?', answer: 'Our programs cover ages 2 to 6, with small groups for toddlers, preschoolers, and children preparing for kindergarten. We help families choose a group that suits their child’s stage.' },
-  { question: 'What does a typical day look like?', answer: 'A balanced day includes a warm welcome, free play, small-group learning, snacks, outdoor exploration, creative activities, and quiet time. Familiar routines help children feel comfortable.' },
-  { question: 'How do you keep children safe?', answer: 'Our approach includes supervised play, age-appropriate spaces, clear collection procedures, and regular conversations with families. A tour is a good time to discuss your child’s individual needs.' },
-  { question: 'Who will teach my child?', answer: 'Each group has a dedicated early-years educator who gets to know the children and their families. Meet the team on our Teachers page or arrange a visit to see a class in action.' },
-  { question: 'Are meals and snacks provided?', answer: 'Our plans include a morning snack, with lunch available in full-day care. Please discuss allergies and dietary preferences with the team before enrollment.' },
-  { question: 'How do I apply for a place?', answer: 'Choose a program, arrange a visit, and tell us about your child. The team will explain availability, settling-in visits, and the next steps before confirming a place.' },
-  { question: 'How big are the learning groups?', answer: 'Group sizes depend on the program and the children’s ages. Our learning groups range from 12 to 18 children. Ask the center to confirm its current staffing and group arrangements.' },
-  { question: 'Can we visit before enrolling?', answer: 'Of course. A visit gives you and your child time to explore the spaces, meet the teachers, and ask questions. Use the enrollment form to prepare a visit request.' },
-  { question: 'How will I hear about progress?', answer: 'Teachers share everyday observations, celebrate new skills, and make time for family conversations. You can also ask for a more detailed discussion whenever you need one.' },
+  {
+    "question": "What does Young Explorers Academy offer?",
+    "answer": "Explore camps, outdoor learning, creative activities, storytelling, and community events. Contact the academy for programmes currently open for registration."
+  },
+  {
+    "question": "Which ages can participate?",
+    "answer": "Age guidance depends on the activity. Share your child’s age and interests so the team can recommend a suitable upcoming programme."
+  },
+  {
+    "question": "Where do activities take place?",
+    "answer": "The academy’s activities are based in Nepal, with events in Kathmandu and experiences at other venues. Confirm the meeting point and transport arrangements for your chosen programme."
+  },
+  {
+    "question": "How do we register?",
+    "answer": "Message @young.explorers.academy on Instagram to ask about availability and registration. The enquiry form on this website also lets you prepare a request."
+  },
+  {
+    "question": "What are the programme fees?",
+    "answer": "Ask for the current fee in Nepali rupees (Rs. / NPR). Prices, duration, and inclusions vary by programme; confirm the total before registering."
+  },
+  {
+    "question": "Are food and transport included?",
+    "answer": "Inclusions depend on the programme. Ask about meals, drinking water, transport, equipment, and any additional costs before booking."
+  },
+  {
+    "question": "What should my child bring?",
+    "answer": "Ask for the activity’s packing list. Let the team know about allergies, accessibility needs, and anything that will help your child participate comfortably."
+  },
+  {
+    "question": "Where can I see recent activities?",
+    "answer": "Visit @young.explorers.academy on Instagram for academy updates, or browse the photo gallery on this website."
+  },
+  {
+    "question": "How do I confirm dates and availability?",
+    "answer": "Contact the academy for current dates, age groups, venue details, and available places. Past event stories on this website are highlights, not upcoming bookings."
+  }
 ];
 
-export const testimonials = [
-  { name: 'Emma Thompson', relation: 'Mother of a preschool learner', quote: 'The little things make such a difference: a warm welcome, a teacher who listens, and a new story to tell at the end of every day. Our daughter has found her confidence here.', initials: 'ET' },
-  { name: 'David Morgan', relation: 'Father of a pre-K learner', quote: 'We wanted a place where our son could be himself. He comes home full of questions, new songs, and happy memories. Seeing him excited about learning has been wonderful.', initials: 'DM' },
-  { name: 'Sofia Williams', relation: 'Mother of an early learner', quote: 'Starting preschool felt like a big step. The gentle settling-in routine helped all of us, and now our little one runs in to greet her friends every morning.', initials: 'SW' },
+export const experienceHighlights = [
+  {
+    "title": "Discover Together",
+    "label": "Outdoor learning",
+    "text": "A trail to follow, a garden to explore, and new questions to ask. Discover the outdoor moments in our academy gallery.",
+    "image": assets.outdoor,
+    "initials": "01"
+  },
+  {
+    "title": "Make Something Yours",
+    "label": "Creative experiences",
+    "text": "Ideas take shape through colour, materials, and hands-on exploration. See children sharing their creations and celebrating what they have made.",
+    "image": assets.art,
+    "initials": "02"
+  },
+  {
+    "title": "Share the Adventure",
+    "label": "Our community",
+    "text": "Friendships, celebrations, and time spent together are part of the academy story. Explore the moments that connect our community.",
+    "image": assets.family,
+    "initials": "03"
+  }
 ];
 
 export const articles = [
-  { slug: 'building-your-childs-confidence', title: 'Small Everyday Moments That Build a Child’s Confidence', category: 'Parenting Tips', image: assets.family, date: 'September 8, 2026', readTime: '4 min read', intro: 'Confidence grows through everyday moments: a patient conversation, a chance to try again, and the feeling that someone believes in you.', sections: [
-    ['Make room for small choices', 'Choosing a story, picking a shirt, or deciding which blocks to use gives children a manageable way to practice independence. Offer two simple options and allow time for a decision.'],
-    ['Notice the effort behind an achievement', 'Instead of focusing only on a finished picture or a correct answer, describe what you saw: “You kept trying different pieces until the puzzle fit.” Specific observations help children recognize their own progress.'],
-    ['Let mistakes be part of learning', 'When something goes wrong, stay close and curious. Ask what they might try next. You do not have to fix every problem; sometimes encouragement and another chance are enough.'],
-    ['Create a rhythm of connection', 'A few minutes of uninterrupted play or conversation can become a dependable part of the day. Follow your child’s interests, listen to their ideas, and enjoy what you discover together.'],
-  ] },
-  { slug: 'happy-daily-routines', title: 'Creating Gentle Routines for Happier Family Days', category: 'Parenting Tips', image: assets.reading, date: 'September 4, 2026', readTime: '5 min read', intro: 'A predictable rhythm helps young children know what comes next. The goal is a day that feels reassuring, with enough flexibility for real life.', sections: [
-    ['Start with one familiar moment', 'Choose a small routine that happens every day, such as putting shoes by the door or reading after dinner. Keep the steps simple and practice together.'],
-    ['Use pictures and friendly reminders', 'A few pictures can help children understand the order of a morning or bedtime routine. Describe the next step calmly and give time to move from one activity to another.'],
-    ['Leave space for play and rest', 'An enjoyable routine balances activity with quieter moments. Children need time to explore their own ideas as well as time to slow down.'],
-    ['Adjust together as your child grows', 'Check what is working and what feels difficult. Small changes can make a routine more comfortable for the whole family. Consistency matters more than perfection.'],
-  ] },
-  { slug: 'playful-early-learning', title: 'Five Playful Ways to Explore Early Learning at Home', category: 'Early Learning', image: assets.child, date: 'August 28, 2026', readTime: '4 min read', intro: 'Some of the best learning materials are already in your home. Everyday play offers plenty of chances to talk, count, imagine, and discover.', sections: [
-    ['Turn a walk into a noticing game', 'Look for colors, shapes, and interesting sounds. Follow your child’s questions and describe what you both notice. There is no need to turn every observation into a lesson.'],
-    ['Build and tell a story', 'Use blocks, cushions, or empty boxes to make a setting. Ask who might live there and what could happen next. Join the story while leaving your child room to lead.'],
-    ['Count during everyday tasks', 'Set out cups, sort socks, or count the steps to the garden. Real objects help children connect number words with things they can touch and move.'],
-    ['Make music and make a mess', 'Clap a rhythm, sing a familiar song, paint with water, or explore play dough. Choose safe materials and enjoy the process together, without needing a perfect result.'],
-  ] },
+  {
+    "slug": "kids-carnival-kathmandu",
+    "title": "A Look Back at Kids Carnival 2025",
+    "category": "Community Events",
+    "image": assets.family,
+    "date": "August 2, 2025 · Past event",
+    "readTime": "2 min read",
+    "intro": "Young Explorers Academy brought children and families together for Kids Carnival at Silver Oak, Gairidhara, Kathmandu.",
+    "sections": [
+      [
+        "A day for the community",
+        "The event featured games, creative activities, and a programme for children and families."
+      ],
+      [
+        "A stage for young voices",
+        "Mic Drop Mini-Star gave children an opportunity to express themselves through a public-speaking contest."
+      ],
+      [
+        "Looking ahead",
+        "This is a past event. Follow the academy on Instagram for future announcements and registration details."
+      ]
+    ],
+    "source": "https://kathmandupost.com/art-culture/2025/08/02/events-august-2-to-august-8-2025",
+    "sourceLabel": "Event coverage in The Kathmandu Post"
+  },
+  {
+    "slug": "stories-and-art",
+    "title": "When a Story Becomes a Creative Adventure",
+    "category": "Storytelling & Art",
+    "image": assets.reading,
+    "date": "Academy highlights",
+    "readTime": "2 min read",
+    "intro": "The Joy House Collective shared a “Stuck” storytelling performance and art activity at Young Explorers Academy.",
+    "sections": [
+      [
+        "Stories to take part in",
+        "A shared story can become a starting point for imagination, conversation, and making."
+      ],
+      [
+        "From listening to creating",
+        "Connecting storytelling and art gives children different ways to respond to an idea."
+      ],
+      [
+        "Explore upcoming sessions",
+        "Contact the academy to learn about future storytelling and creative activities."
+      ]
+    ],
+    "source": "https://thejoyhousecollective.com/tag/creative-learning-nepal/",
+    "sourceLabel": "Session listing by The Joy House Collective"
+  },
+  {
+    "slug": "outdoor-learning-moments",
+    "title": "Little Discoveries Beyond the Classroom",
+    "category": "From Our Gallery",
+    "image": assets.outdoor,
+    "date": "Academy photo journal",
+    "readTime": "2 min read",
+    "intro": "Our academy photographs capture outdoor exploration, shared discoveries, and children learning through experience.",
+    "sections": [
+      [
+        "Notice the world around you",
+        "A walk or a garden visit offers opportunities to look closely, ask questions, and share what catches your attention."
+      ],
+      [
+        "Make room for curiosity",
+        "Give children time to explore an idea, try an activity, and talk about what they notice."
+      ],
+      [
+        "Plan the next adventure",
+        "Ask about upcoming outdoor activities, the age guidance, meeting point, and what to bring."
+      ]
+    ],
+    "source": "https://www.instagram.com/young.explorers.academy/",
+    "sourceLabel": "Follow the academy on Instagram"
+  }
 ];
 
 // Original academy photographs, served locally without third-party requests.

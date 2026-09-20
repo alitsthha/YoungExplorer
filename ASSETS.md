@@ -10,7 +10,7 @@ The supplied `public/images/Logo/Young Explorers Academy LOGO BRAND DESIGN.pdf` 
 
 All active photographs come from the supplied `public/images/Gallery/` folder. Semantic section assignments and the complete 37-photo tour are defined in `src/data/content.ts`. One duplicate photograph is omitted from the tour. The supplied videos remain available in the folder.
 
-The photo component uses native images with lazy loading. The hero is loaded eagerly. Group and activity photos illustrate teaching teams without assigning invented personal identities to people in the photographs. Testimonials retain the existing illustrative text and use initials instead of stock portraits.
+The photo component uses native images with lazy loading. The hero is loaded eagerly. Group and activity photos illustrate teaching teams without assigning invented personal identities to people in the photographs. The academy-experience carousel uses supplied photographs and original descriptive copy; the earlier fictional testimonials have been removed.
 
 The older `hero-schoolboy.png`, `children-atlas.png`, and `teachers-atlas.png` files are retained but are no longer referenced by the website.
 
