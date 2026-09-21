@@ -1,21 +1,36 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import type { CSSProperties, ReactNode } from 'react';
 
-export function Reveal({ children, delay = 0, className = '', direction = 'up' }: { children: ReactNode; delay?: number; className?: string; direction?: 'up' | 'left' | 'right' | 'scale' }) {
+export function Reveal({ children, delay = 0, className = '', direction = 'up', stagger = false }: { children: ReactNode; delay?: number; className?: string; direction?: 'up' | 'left' | 'right' | 'scale' | 'fade'; stagger?: boolean }) {
   const ref = useRef<HTMLDivElement>(null);
-  useEffect(() => {
+  useLayoutEffect(() => {
     const node = ref.current;
     if (!node) return;
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
-      node.classList.add('is-visible'); return;
-    }
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) { node.classList.add('is-visible'); observer.unobserve(node); }
-    }, { threshold: 0.12, rootMargin: '0px 0px -20px 0px' });
+    const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (motion.matches || !('IntersectionObserver' in window)) return;
+
+    // Only hide content once we know it can be observed. A zero threshold also
+    // supports tall forms and text blocks on short mobile viewports.
+    const observer = new IntersectionObserver(entries => {
+      if (entries.some(entry => entry.isIntersecting)) show();
+    }, { threshold: 0, rootMargin: '0px 0px -36px 0px' });
+    const show = () => {
+      node.classList.add('is-visible');
+      observer.disconnect();
+    };
+    const onMotionChange = () => { if (motion.matches) show(); };
+    node.classList.add('reveal-ready');
     observer.observe(node);
-    return () => observer.disconnect();
+    node.addEventListener('focusin', show);
+    motion.addEventListener('change', onMotionChange);
+    return () => {
+      observer.disconnect();
+      node.removeEventListener('focusin', show);
+      motion.removeEventListener('change', onMotionChange);
+      node.classList.remove('reveal-ready', 'is-visible');
+    };
   }, []);
-  return <div ref={ref} className={`reveal reveal-${direction} ${className}`} style={{ '--delay': `${delay}ms` } as CSSProperties}>{children}</div>;
+  return <div ref={ref} className={`reveal reveal-${direction}${stagger ? ' reveal-stagger' : ''} ${className}`} style={{ '--delay': `${delay}ms` } as CSSProperties}>{children}</div>;
 }
 
 export function Counter({ value, suffix = '+' }: { value: number; suffix?: string }) {

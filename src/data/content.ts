@@ -1,11 +1,23 @@
 // Public source links and confirmed details are documented in CONTENT_SOURCES.md.
 export const academy = {
   name: 'Young Explorers Academy',
-  location: 'Baluwatar, Kathmandu, Nepal',
+  location: '40 Pandol Marga, Kathmandu, Bagmati Province 44600, Nepal',
+  phones: [
+    { label: '986-7068663', href: 'tel:+9779867068663' },
+    { label: '980-8298962', href: 'tel:+9779808298962' },
+  ],
+  email: 'info@youngexplorernepal.com',
   instagram: 'https://www.instagram.com/young.explorers.academy/',
   instagramHandle: '@young.explorers.academy',
-  googleProfile: 'https://www.google.com/search?q=Young+Explorers+Academy+Kathmandu',
+  googleProfile: 'https://www.google.com/maps?cid=14017297826922829007',
   feeNote: 'Contact us for current fees in Nepali rupees (Rs. / NPR).',
+};
+
+// Destination coordinates and business ID from the user's Google Maps link.
+// The URL's @ coordinates describe the camera, not the academy's location.
+export const academyMap = {
+  embedUrl: 'https://www.google.com/maps?q=27.7278678,85.3268736&z=17&output=embed',
+  url: academy.googleProfile,
 };
 
 // Only add amounts here after the academy confirms its current NPR fee schedule.

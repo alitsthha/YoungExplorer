@@ -19,7 +19,7 @@ export function Doodles({ light = false }: { light?: boolean }) {
 }
 
 export function SectionTitle({ eyebrow, title, description, centered = false, action, className = '' }: { eyebrow: string; title: string; description?: string; centered?: boolean; action?: ReactNode; className?: string }) {
-  return <Reveal className={`section-heading ${centered ? 'centered' : ''} ${className}`}><div className="section-heading-main"><span className="eyebrow">{eyebrow}</span><h2>{title}</h2>{centered && description && <p>{description}</p>}</div>{!centered && description && <p className="section-description">{description}</p>}{action}</Reveal>;
+  return <Reveal stagger className={`section-heading ${centered ? 'centered' : ''} ${className}`}><div className="section-heading-main"><span className="eyebrow">{eyebrow}</span><h2>{title}</h2>{centered && description && <p>{description}</p>}</div>{!centered && description && <p className="section-description">{description}</p>}{action}</Reveal>;
 }
 
 export function PageHero({ title, description, parent }: { title: string; description?: string; parent?: { title: string; to: string } }) {

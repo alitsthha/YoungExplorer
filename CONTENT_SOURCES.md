@@ -14,7 +14,7 @@ Verified on 20 September 2026.
 User-provided Google search for “young explorers”, supplemented by:
 https://www.google.com/search?q=Young+Explorers+Academy+Kathmandu
 
-Google returned a loading/redirect page rather than the business panel. A specific street address, direct phone number, email, opening hours, and Google rating could not be verified. The site links to the Google search and Instagram profile; it does not invent these missing fields or reuse details from similarly named academies abroad. Partner event booking numbers and venues are not treated as academy contact details.
+Google returned a loading/redirect page rather than the business panel. A specific street address, direct phone number, email, opening hours, and Google rating could not be verified. The original site linked to Google search and Instagram. Contact details supplied by the user on 22 September 2026 are now included below; details from similarly named academies abroad are not reused. Partner event booking numbers and venues are not treated as academy contact details.
 
 ## Public event references
 
@@ -35,3 +35,26 @@ Age guidance, programme dates, daily schedules, food, transport, and inclusions 
 ## Removed template content
 
 The old US phone, invented address/email, specific preschool age bands, capacity figures, graduate counts, satisfaction rate, review score, fictional testimonials, and fixed daily timetable were removed. The existing animated carousel now presents academy experiences instead of fictional customer reviews. Existing programme routes and old article links remain supported.
+
+## User-supplied contact details — 22 September 2026
+
+- Phone: 986-7068663 and 980-8298962, linked with Nepal’s +977 country code.
+- Email: info@youngexplorernepal.com.
+- The user subsequently supplied the academy's exact Google Maps directions link. Its destination address is 40 Pandol Marga, Kathmandu, Bagmati Province 44600, Nepal; destination coordinates are 27.7278678, 85.3268736. The footer map now pins those coordinates, and shared Google links open business ID `0xc287721b549714cf` (decimal CID `14017297826922829007`): https://www.google.com/maps?cid=14017297826922829007. The map camera coordinates in the supplied URL are not used as the destination.
+
+## Camp journey gallery and testimonial design
+
+- Holiday Camp and Summer Camp galleries are illustrative four-stage journeys using supplied academy photographs. They do not identify one child or claim a dated sequence of events.
+- `src/data/campStories.ts` holds gallery captions and three real Google review excerpts. The initial sample testimonials have been removed.
+
+## Google review excerpts — 22 September 2026
+
+Read the public academy listing and its Reviews tab in Chrome:
+https://www.google.com/maps?cid=14017297826922829007&hl=en
+
+- Profile snapshot: 4.9 / 5, 14 reviews. The interface displays the date checked; this is not a live Google API feed.
+- Apekshya Pradhan: holiday camp enthusiasm and growing confidence.
+- Veronica O'Sullivan Freltoft: four weeks of summer activities, variety, and flexibility.
+- Smriti Maharjan: caring teachers, a safe environment, and flexible timing.
+- Each card uses a brief verbatim excerpt, the public reviewer name, and a source link. Text labelled “Review summary” is an editorial paraphrase. No reviewer photographs, invented programme enrolments, or invented ratings were added.
+- Google showed a different phone number; the user-supplied contact numbers remain unchanged.
