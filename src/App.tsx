@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Layout } from './components/Layout';
 import { Router, useRouter } from './lib/router';
-import { AboutPage, ActivitiesPage, AdmissionsPage, BlogPage, BlogPostPage, ClassDetailsPage, ClassesPage, ContactPage, FAQsPage, HomePage, LegalPage, NotFoundPage, PricingPage, TeachersPage } from './pages/Pages';
+import { AboutPage, ActivitiesPage, AdmissionsPage, BlogPage, BlogPostPage, ClassDetailsPage, ClassesPage, ContactPage, FAQsPage, HomePage, LegalPage, NotFoundPage, TeachersPage } from './pages/Pages';
 
 function Routes() {
   const { location } = useRouter();
@@ -24,7 +24,6 @@ function Routes() {
   else if (path === '/activities') page = <ActivitiesPage />;
   else if (path === '/admissions') page = <AdmissionsPage />;
   else if (path === '/teachers') page = <TeachersPage />;
-  else if (path === '/pricing') page = <PricingPage />;
   else if (path === '/faqs') page = <FAQsPage />;
   else if (path === '/blog') page = <BlogPage />;
   else if (path.startsWith('/blog/')) page = <BlogPostPage slug={path.split('/')[2]} />;

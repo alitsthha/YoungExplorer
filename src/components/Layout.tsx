@@ -6,8 +6,7 @@ import { Doodles, Newsletter, ShapeMasks } from './Shared';
 import { academy, programs } from '../data/content';
 
 const pages = [
-  ['Activities', '/activities'], ['Admissions', '/admissions'], ['Our Community', '/teachers'],
-  ['Programme Fees', '/pricing'], ['FAQs', '/faqs'], ['Blog', '/blog'],
+  ['Activities', '/activities'], ['Admissions', '/admissions'], ['Our Community', '/teachers'], ['FAQs', '/faqs'], ['Blog', '/blog'],
 ];
 
 export function Logo() {

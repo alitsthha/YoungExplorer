@@ -6,3 +6,4 @@ dist/
 .env.local
 .sites-runtime/
 .openai/
+.idea/
