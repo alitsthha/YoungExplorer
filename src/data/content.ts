@@ -8,6 +8,8 @@ export const academy = {
   ],
   email: 'info@youngexplorernepal.com',
   instagram: 'https://www.instagram.com/young.explorers.academy/',
+  facebook: 'https://www.facebook.com/share/1FjBa2U1AB/',
+  facebookHandle: 'Young Explorers Academy',
   instagramHandle: '@young.explorers.academy',
   googleProfile: 'https://www.google.com/maps?cid=14017297826922829007',
   feeNote: 'Contact us for current fees in Nepali rupees (Rs. / NPR).',

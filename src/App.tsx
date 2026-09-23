@@ -39,7 +39,6 @@ function Routes() {
   else if (path === '/classes') page = <ClassesPage />;
   else if (path.startsWith('/classes/')) page = <ClassDetailsPage slug={path.split('/')[2]} />;
   else if (path === '/activities') page = <ActivitiesPage />;
-  else if (path === '/kids-activities-kathmandu') page = <KidsActivitiesPage />;
   else if (path === '/admissions') page = <AdmissionsPage />;
   else if (path === '/teachers') page = <TeachersPage />;
   else if (path === '/faqs') page = <FAQsPage />;

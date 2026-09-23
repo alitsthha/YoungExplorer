@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
 import { ArrowUp, ChevronDown, Mail, MapPin, Menu, Phone, X } from 'lucide-react';
-import { FaInstagram } from 'react-icons/fa';
+import { FaFacebook, FaInstagram } from 'react-icons/fa';
 import { Link, useRouter } from '../lib/router';
 import { Doodles, Newsletter, ShapeMasks } from './Shared';
 import { academy, academyMap, programs } from '../data/content';
@@ -52,9 +52,10 @@ export function Footer() {
     <Reveal delay={200}><h3>Our Programs</h3><nav aria-label="Program links">{programs.slice(0, 5).map(p => <Link key={p.slug} to={`/classes/${p.slug}`}>{p.title.replace(' Program', '')}</Link>)}</nav></Reveal>
     <Reveal delay={300} className="footer-contact">
       <h3>Connect With Us</h3>
-      {academy.phones.map(phone => <a key={phone.href} href={phone.href}><Phone size={18} aria-hidden="true" /><span>{phone.label}</span></a>)}
+      <div className="footer-phone-line"><Phone size={18} aria-hidden="true" /><span>{academy.phones.map((phone, index) => <span key={phone.href}>{index > 0 && ' / '}<a href={phone.href}>{phone.label}</a></span>)}</span></div>
       <a href={`mailto:${academy.email}`}><Mail size={18} aria-hidden="true" /><span>{academy.email}</span></a>
       <a href={academy.instagram} target="_blank" rel="noopener noreferrer"><FaInstagram size={18} aria-hidden="true" /><span>{academy.instagramHandle}</span></a>
+      <a href={academy.facebook} target="_blank" rel="noopener noreferrer"><FaFacebook size={18} aria-hidden="true" /><span>{academy.facebookHandle}</span></a>
       <Link to="/contact" className="footer-tour">Programme enquiries <span aria-hidden="true">↗</span></Link>
     </Reveal>
   </div>
