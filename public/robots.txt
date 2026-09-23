@@ -1,0 +1,28 @@
+# Young Explorers Academy
+# Static React/Vite website: public content is crawlable by default.
+
+User-agent: *
+Allow: /
+
+# Backend and administrative paths are not part of the public website.
+Disallow: /admin/
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+Disallow: /administrator/
+Disallow: /backend/
+
+# Keep internal search results and user-specific areas out of the crawl.
+Disallow: /search
+Disallow: /*?q=
+Disallow: /*?s=
+Disallow: /*&q=
+Disallow: /*&s=
+Disallow: /account/
+Disallow: /login
+Disallow: /register
+Disallow: /checkout/
+Disallow: /cart/
+Disallow: /my-account/
+
+# XML sitemap for public pages.
+Sitemap: https://www.youngexplorernepal.com/sitemap.xml

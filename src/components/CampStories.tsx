@@ -61,7 +61,7 @@ export function ParentTestimonialsSection() {
           <h2 id={`${uid}-heading`}>Small moments.<br /><span>Big feelings.</span></h2>
           <p>Real experiences, shared by families on Google. Discover what they say about the people, activities, and little moments that make a difference.</p>
           <a className="parent-story-seal" href={googleReviewSummary.url} target="_blank" rel="noopener noreferrer"><span><Star size={24} aria-hidden="true" /></span><div><strong>{googleReviewSummary.rating} / 5 on Google</strong><small>{googleReviewSummary.count} reviews · Checked {googleReviewSummary.checkedOn}</small></div></a>
-          <ButtonLink to="/admissions#enrollment">Start Your Child’s Story <ArrowRight size={17} aria-hidden="true" /></ButtonLink>
+          <ButtonLink to="/admissions#enrollment">Find the Right Programme <ArrowRight size={17} aria-hidden="true" /></ButtonLink>
         </Reveal>
         <Reveal direction="up" delay={150} className="parent-quote-reveal">
           <div className="parent-quote-card" role="region" aria-roledescription="carousel" aria-label="Parent reviews from Google">
