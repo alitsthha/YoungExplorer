@@ -49,9 +49,9 @@ const memories: Record<string, [string, string]> = {
   '781207533': ['Discovering together', 'A group of children and adults at a historic brick archway'],
 };
 
-// Discover the collection at build time; adding photos needs no component edits.
-const collection = import.meta.glob('/public/images/Gallery/*.{jpg,jpeg,png,webp,avif}', { eager: true, query: '?url', import: 'default' });
-const photographs = [...featured, ...Object.keys(collection).sort()
+// Discover filenames only; public images are served directly from /images.
+const collection = Object.keys(import.meta.glob('/public/images/Gallery/*.{jpg,jpeg,png,webp,avif}'));
+const photographs = [...featured, ...collection.sort()
   .filter(path => !/\(\d+\)/.test(path))
   .map(path => path.replace('/public', ''))
   .filter(src => !featured.some(photo => photo.src === src))
