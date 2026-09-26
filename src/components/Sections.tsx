@@ -1,4 +1,4 @@
-import { useEffect, useId, useRef, useState } from 'react';
+import { useEffect, useId, useLayoutEffect, useRef, useState } from 'react';
 import type { FormEvent, ReactNode } from 'react';
 import { ArrowLeft, ArrowRight, Award, Baby, BookOpen, Brush, Check, CheckCircle2, ChevronLeft, ChevronRight, Clock, Download, GraduationCap, Heart, Lightbulb, Music2, Phone, Play, Plus, Puzzle, School, ShieldCheck, Smile, Sparkles, Sun, Users } from 'lucide-react';
 import { articles, assets, faqs, programs, schoolGallery, teachers, experienceHighlights, academy, formatNPR } from '../data/content';
@@ -8,7 +8,36 @@ import { Counter, Reveal } from './ui/Reveal';
 import { Modal } from './ui/Modal';
 
 export function Hero() {
-  return <section className="hero navy"><Doodles light /><div className="container"><div className="hero-main">
+  const heroRef = useRef<HTMLElement>(null);
+  useLayoutEffect(() => {
+    const hero = heroRef.current;
+    if (!hero || !('IntersectionObserver' in window)) return;
+    const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let observer: IntersectionObserver | undefined;
+    const setup = () => {
+      observer?.disconnect();
+      if (motion.matches) return;
+      // Reuse the CSS keyframes so each hero element retains its exact timing.
+      const animations = new Map<Element, Animation[]>();
+      hero.querySelectorAll('.hero-enter, .hero-child, .teacher-proof').forEach(node => {
+        const entrance = node.getAnimations().filter(animation =>
+          animation instanceof CSSAnimation && animation.animationName === 'hero-in');
+        entrance.forEach(animation => { animation.pause(); animation.currentTime = 0; });
+        animations.set(node, entrance);
+      });
+      observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => animations.get(entry.target)?.forEach(animation => {
+          animation.updatePlaybackRate(entry.isIntersecting ? 1 : -1);
+          animation.play();
+        }));
+      }, { threshold: 0, rootMargin: '0px 0px -36px 0px' });
+      animations.forEach((_, node) => observer!.observe(node));
+    };
+    setup();
+    motion.addEventListener('change', setup);
+    return () => { observer?.disconnect(); motion.removeEventListener('change', setup); };
+  }, []);
+  return <section ref={heroRef} className="hero navy"><Doodles light /><div className="container"><div className="hero-main">
     <div className="hero-copy"><span className="eyebrow hero-enter">Kids Activities in Kathmandu</span><h1 tabIndex={-1} className="hero-enter">Help Your Child<br /><span>Explore</span> and Grow<br />Beyond the Classroom</h1><p className="hero-enter">Find holiday camps, outdoor learning, creative workshops, storytelling, and family activities at Young Explorers Academy in Baluwatar, Kathmandu.</p><div className="hero-enter"><ButtonLink to="/admissions#enrollment">Check Programme Availability</ButtonLink></div></div>
     <div className="hero-visual"><img className="hero-child" src={assets.hero} alt="Two Young Explorers Academy learners proudly sharing their achievements" fetchPriority="high" /><div className="teacher-proof"><div className="avatar-stack">{teachers.slice(0, 3).map(t => <Photo key={t.name} src={t.image} alt="" eager />)}<span aria-hidden="true"><Plus size={19} /></span></div><strong>Little explorers</strong><p>Learning & Growing Together</p></div></div>
   </div><div className="hero-features">
