@@ -3,11 +3,12 @@ import { academy, articles, formatNPR, programs } from '../data/content';
 import { Link, useRouter } from '../lib/router';
 import { ButtonLink, Doodles, PageHero, Photo, SectionTitle } from '../components/Shared';
 import { Reveal } from '../components/ui/Reveal';
+import { HomeGallery } from '../components/HomeGallery';
 import { ParentTestimonialsSection } from '../components/CampStories';
 import { AboutSection, ActivitiesSection, AdmissionsSteps, BlogsSection, ClassesSection, DailySchedule, EnrollmentForm, EnrollmentSection, FAQSection, Hero, TeachersSection, TestimonialsSection, TourBanner, WhySection } from '../components/Sections';
 
 export function HomePage() {
-  return <><Hero /><AboutSection /><ClassesSection /><WhySection /><TourBanner /><ActivitiesSection /><TeachersSection /><ParentTestimonialsSection /><FAQSection /><EnrollmentSection /><BlogsSection /></>;
+  return <><Hero /><AboutSection /><ClassesSection /><WhySection /><TourBanner /><ActivitiesSection /><TeachersSection /><HomeGallery /><ParentTestimonialsSection /><FAQSection /><EnrollmentSection /><BlogsSection /></>;
 }
 export function AboutPage() {
   return <><PageHero title="About Young Explorers Academy" description="A skill-based learning centre for children in Baluwatar, Kathmandu." /><AboutSection extended /><section className="section cream wave-section"><Doodles /><div className="container"><SectionTitle centered eyebrow="What Matters to Us" title="Small People. Big Possibilities." description="Our values shape the way we care, teach, and welcome every family." /><div className="values-grid">{[

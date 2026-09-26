@@ -12,13 +12,17 @@ export function Reveal({ children, delay = 0, className = '', direction = 'up', 
     // Only hide content once we know it can be observed. A zero threshold also
     // supports tall forms and text blocks on short mobile viewports.
     const observer = new IntersectionObserver(entries => {
-      if (entries.some(entry => entry.isIntersecting)) show();
+      for (const entry of entries) {
+        node.classList.toggle('is-visible', entry.isIntersecting || motion.matches);
+      }
     }, { threshold: 0, rootMargin: '0px 0px -36px 0px' });
     const show = () => {
       node.classList.add('is-visible');
-      observer.disconnect();
     };
-    const onMotionChange = () => { if (motion.matches) show(); };
+    const onMotionChange = () => {
+      if (motion.matches) show();
+      else { observer.unobserve(node); observer.observe(node); }
+    };
     node.classList.add('reveal-ready');
     observer.observe(node);
     node.addEventListener('focusin', show);
@@ -37,11 +41,14 @@ export function Counter({ value, suffix = '+' }: { value: number; suffix?: strin
   const ref = useRef<HTMLSpanElement>(null);
   const [display, setDisplay] = useState(value);
   useEffect(() => {
-    if (!ref.current || window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+    if (!ref.current || !('IntersectionObserver' in window)) return;
+    const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
     let frame = 0;
     const observer = new IntersectionObserver(([entry]) => {
-      if (!entry.isIntersecting) return;
-      observer.disconnect();
+      cancelAnimationFrame(frame);
+      if (motion.matches) { setDisplay(value); return; }
+      if (!entry.isIntersecting) { setDisplay(0); return; }
+      setDisplay(0);
       const start = performance.now();
       const animate = (now: number) => {
         const progress = Math.max(0, Math.min((now - start) / 1400, 1));
@@ -50,8 +57,16 @@ export function Counter({ value, suffix = '+' }: { value: number; suffix?: strin
       };
       frame = requestAnimationFrame(animate);
     }, { threshold: 0.5 });
-    observer.observe(ref.current);
-    return () => { observer.disconnect(); cancelAnimationFrame(frame); };
+    const node = ref.current;
+    const onMotionChange = () => {
+      cancelAnimationFrame(frame);
+      setDisplay(value);
+      observer.unobserve(node);
+      observer.observe(node);
+    };
+    observer.observe(node);
+    motion.addEventListener('change', onMotionChange);
+    return () => { observer.disconnect(); cancelAnimationFrame(frame); motion.removeEventListener('change', onMotionChange); };
   }, [value]);
   return <span ref={ref} aria-label={`${value}${suffix}`}><span aria-hidden="true">{display}{suffix}</span></span>;
 }
